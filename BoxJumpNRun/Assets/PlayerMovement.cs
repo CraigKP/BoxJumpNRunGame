@@ -22,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("d"))
         {
-            this.rb.AddForce(this.sidewaysForce * Time.deltaTime, 0, 0);
+            this.rb.AddForce(this.sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange); // VelocityChange ignores the mass and makes the movement instantaneous
         }
         if (Input.GetKey("a"))
         {
-            this.rb.AddForce(-this.sidewaysForce * Time.deltaTime, 0, 0);
+            this.rb.AddForce(-this.sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
